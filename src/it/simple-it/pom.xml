@@ -21,11 +21,17 @@
         <version>@project.version@</version>
         <executions>
           <execution>
-            <id>touch</id>
+            <id>split</id>
             <phase>validate</phase>
             <goals>
-              <goal>touch</goal>
+              <goal>split</goal>
             </goals>
+			  <configuration>
+				  <sourceFile>${basedir}/test-source.txt</sourceFile>
+				  <targetFilePrefix>${basedir}/test-destination-</targetFilePrefix>
+				  <targetFileSuffix>.txt</targetFileSuffix>
+				  <splitExpression>/* SPLIT HERE */</splitExpression>
+			  </configuration>
           </execution>
         </executions>
       </plugin>
