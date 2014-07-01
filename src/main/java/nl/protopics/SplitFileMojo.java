@@ -18,18 +18,30 @@ import org.codehaus.plexus.util.StringUtils;
 public class SplitFileMojo extends AbstractMojo
 {
 	/**
-	 * Source file. This file will be read, one line at a time, written to target files specified by targetFilePrefix
+	 * Source file. This file will be written to target files specified by targetFilePrefix
 	 * and targetFileSuffix, split on lines matching splitExpression
 	 */
 	@Parameter(required = true)
 	private File sourceFile;
 
+	/**
+	 * Target filename prefix.
+	 * All the created filenames will be formed by targetFilePrefix + number + targetFileSuffix.
+	 */
 	@Parameter(required = true)
 	private String targetFilePrefix;
 
+	/**
+	 * Target filename suffix.
+	 * All the created filenames will be formed by targetFilePrefix + number + targetFileSuffix.
+	 */
 	@Parameter(required = true)
 	private String targetFileSuffix;
 
+	/**
+	 * String to match lines where the sourceFile will be split.
+	 * Nothing else should be on the line, apart from whitespace.
+	 */
 	@Parameter(required = true)
 	private String splitExpression;
 
