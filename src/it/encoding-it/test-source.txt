@@ -1,0 +1,7 @@
+Regel 1
+Regël 2
+Regel 3
+/* SPLIT HERE */
+Regel 4
+Regel 5
+Regel 6
